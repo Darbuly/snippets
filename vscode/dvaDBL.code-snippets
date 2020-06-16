@@ -16,7 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 	//	DBl vscode 代码片段
-	// 最后修改时间：2020-6-16 10:27:08
+	// 最后修改时间：2020-6-16 10:44:02
 
 
 	
@@ -45,6 +45,15 @@
 			"yield put ({",
 				"\ttype: '$1',",
 				"\tpayload: ${2:data}",
+			"});"
+		]
+	},
+	"dispatch": {
+		"prefix": "dbldispatch",
+		"body": [
+			"dispatch({",
+				"\ttype: '$1',",
+				"\tpayload: $2",
 			"});"
 		]
 	}
