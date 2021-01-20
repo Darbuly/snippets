@@ -17,17 +17,14 @@
 	// }
 	//	DBl vscode 代码片段
 	// 最后修改时间：2020-6-16 10:44:02
-
-
-	
 	"dvaReducer": {
 		"prefix": "dvar",
 		"body": [
 			"${1:saveReducer}(state, { payload }){",
-				"\treturn {",
-					"\t\t...state,",
-					"\t\t$2: payload",
-				"\t}",
+			"\treturn {",
+			"\t\t...state,",
+			"\t\t$2: payload",
+			"\t}",
 			"}"
 		]
 	},
@@ -35,7 +32,7 @@
 		"prefix": "dvaf",
 		"body": [
 			"*${1:getEffect}({ payload }, { call, put }){",
-				"\t$2",
+			"\t$2",
 			"}"
 		]
 	},
@@ -43,8 +40,8 @@
 		"prefix": "dvayieldput",
 		"body": [
 			"yield put ({",
-				"\ttype: '$1',",
-				"\tpayload: ${2:data}",
+			"\ttype: '$1',",
+			"\tpayload: ${2:data}",
 			"});"
 		]
 	},
@@ -52,49 +49,105 @@
 		"prefix": "dbldispatch",
 		"body": [
 			"dispatch({",
-				"\ttype: '$1',",
-				"\tpayload: $2",
+			"\ttype: '$1',",
+			"\tpayload: $2",
 			"});"
 		]
 	},
 	"eggrestfull": {
-		"prefix": "eggrestfull",
+		"prefix": "asyncResfullIndex",
 		"body": [
 			"async index() {",
-				"\tconst ctx = this.ctx;",
-				"\tctx.body = {",
-				"\t",
-				"\t};",
-				"\tctx.status = 200;",
+			"\tconst ctx = this.ctx;",
+			"\tctx.body = {",
+			"\t",
+			"\t};",
+			"\tctx.status = 200;",
 			"}",
 			"async show() {",
-				"\tconst ctx = this.ctx;",
-				"\tctx.body = {",
-				"\t",
-				"\t};",
-				"\tctx.status = 200;",
+			"\tconst ctx = this.ctx;",
+			"\tctx.body = {",
+			"\t",
+			"\t};",
+			"\tctx.status = 200;",
 			"}",
 			"async create() {",
-				"\tconst ctx = this.ctx;",
-				"\tctx.body = {",
-				"\t",
-				"\t};",
-				"\tctx.status = 201;",
+			"\tconst ctx = this.ctx;",
+			"\tctx.body = {",
+			"\t",
+			"\t};",
+			"\tctx.status = 201;",
 			"}",
 			"async update() {",
-				"\tconst ctx = this.ctx;",
-				"\tctx.body = {",
-				"\t",
-				"\t};",
-				"\tctx.status = 201;",
+			"\tconst ctx = this.ctx;",
+			"\tctx.body = {",
+			"\t",
+			"\t};",
+			"\tctx.status = 201;",
 			"}",
 			"async destroy() {",
-				"\tconst ctx = this.ctx;",
-				"\tctx.body = {",
-				"\t",
-				"\t};",
-				"\tctx.status = 202;",
+			"\tconst ctx = this.ctx;",
+			"\tctx.body = {",
+			"\t",
+			"\t};",
+			"\tctx.status = 202;",
 			"}",
 		]
 	},
+	"eggtrycatch": {
+		"prefix": "try{throw",
+		"body": [
+			"try {",
+			"\t",
+			"\t",
+			"\t",
+			"} catch (e) {",
+			"\tthrow new Error(e);",
+			"}"
+		]
+	},
+	"eggtrycatchtransaction": {
+		"prefix": "try{transaction",
+		"body": [
+			"let transaction: any;",
+			"try {",
+			"\t// 建立事务对象",
+			"\ttransaction = await ctx.model.transaction();",
+			"\t",
+			"\t// todo ",
+			"\t",
+			"\t// 提交事务",
+			"\tawait transaction.commit();",
+			"\t",
+			"\treturn {",
+			"\t\tcode: 200,",
+			"\t\tmsg: '添加成功'",
+			"\t};",
+			"\t",
+			"} catch (e) {",
+			"\t// 事务回滚",
+			"\tawait transaction.rollback();",
+			"\tthrow new Error(e);",
+			"}"
+		]
+	},
+	"eggreturnsuccess": {
+		"prefix": "returneggok",
+		"body": [
+			"return {",
+			"\tcode: 200,",
+			"\tmsg: '添加成功'",
+			"\tdata: $1",
+			"};"
+		]
+	},
+	"eggreturnerror": {
+		"prefix": "returneggeroor",
+		"body": [
+			"return {",
+			"\tcode: 400,",
+			"\tmsg: '$1失败'",
+			"};"
+		]
+	}
 }
