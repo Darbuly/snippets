@@ -149,5 +149,19 @@
 			"\tmsg: '$1失败'",
 			"};"
 		]
+	},
+	"eggasyncindex": {
+		"prefix": "asyncControllerIndex",
+		"body": [
+			"async $1() {",
+			"\tconst { ctx, service } = this;",
+			"\tconst req_data = ctx.request.body;",
+			"\tconst res = await service.v1.admin.$2({",
+			"\t\t...req_data",
+			"\t})",
+			"\tctx.body = res;",
+			"\tctx.status = 200;",
+			"}"
+		]
 	}
 }
