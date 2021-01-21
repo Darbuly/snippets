@@ -208,6 +208,8 @@
 	    "prefix": "clogvar",
 	    "scope": "source.js"
 	},
+
+	//uuiapp
 	"uniapp-submit":{
 	 "body": [
 	        "if (res && res.data.code == 200) {",
@@ -222,7 +224,15 @@
 		"description": "提交",
 		"prefix": "thisapisubmit",
 		"scope": "source.js"
-
-	}
+	},
+	
+	"uniapp-api":{
+		"body": [
+			   "//$1",
+			   "api.$2 = (params,callback) => request.globalRequest('$3','POST$4',params,true,callback);",
+		   ],
+		   "description": "this.$api",
+		   "prefix": "api.",
+	   }
 
 }
