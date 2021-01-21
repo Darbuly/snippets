@@ -91,7 +91,7 @@
 			"\t",
 			"\t};",
 			"\tctx.status = 202;",
-			"}",
+			"}"
 		]
 	},
 	"eggtrycatch": {
@@ -163,5 +163,66 @@
 			"\tctx.status = 200;",
 			"}"
 		]
+	},
+	"if": {
+	    "body": [
+	        "if ($1) {",
+	        "\t$0",
+	        "}"
+	    ],
+	    "prefix": "iff",
+	    "scope": "source.js"
+	},
+	"if ... else": {
+	    "body": [
+	        "if ($1) {",
+	        "\t$0",
+	        "} else{",
+	        "\t",
+	        "}"
+	    ],
+	    "prefix": "ife",
+	    "scope": "source.js"
+	},
+	"clog": {
+	    "body": [
+	        "console.log($1);"
+	    ],
+	    "description": "打印变量",
+	    "prefix": "clog",
+	    "scope": "source.js"
+	},
+	"clogjson": {
+	    "body": [
+	        "console.log(\"$1: \" + JSON.stringify($1));"
+	    ],
+	    "description": "打印JSON字符串",
+	    "prefix": "clogjson",
+	    "scope": "source.js"
+	},
+	"clogvar": {
+	    "body": [
+	        "console.log(\"$1: \",$1);"
+	    ],
+	    "description": "打印变量",
+	    "prefix": "clogvar",
+	    "scope": "source.js"
+	},
+	"uniapp-submit":{
+	 "body": [
+	        "if (res && res.data.code == 200) {",
+	        "\tthis.$$common.showToast('$1成功！', 2000, 'success');",
+	        "\tsetTimeout(() => {",
+	        "\t\t// todo$2",
+	        "\t}, 2000);",
+	        "} else {",
+	        "\tthis.$$common.showToast(res.data.msg);",
+	        "}"
+		],
+		"description": "提交",
+		"prefix": "thisapisubmit",
+		"scope": "source.js"
+
 	}
+
 }
